@@ -46,8 +46,10 @@ export function shareImageUrl(puzzleId: string, stamp: QueryValue): string | nul
   return `${IMAGE_BASE}/share-images/${puzzleId}-${value}.png`;
 }
 
+/** "23:20", or "1:05:09" past an hour - the same as the app's share card. */
 export function formatTime(seconds: number): string {
-  const mm = String(Math.floor(seconds / 60)).padStart(2, "0");
+  const h = Math.floor(seconds / 3600);
+  const mm = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
   const ss = String(seconds % 60).padStart(2, "0");
-  return `${mm}:${ss}`;
+  return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
 }

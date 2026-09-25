@@ -31,12 +31,19 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const query = await searchParams;
   const score = wholeNumber(query.score);
   const time = wholeNumber(query.time);
-  const image = shareImageUrl(id, query.img) ?? `${SITE_URL}/og-default.png`;
+  const card = shareImageUrl(id, query.img);
+  // The app uploads the share card's 1080 x 800 preview band (LAB
+  // `7010:30272`); links without one fall back to the 1200 x 630 default.
+  const image = card
+    ? { url: card, width: 1080, height: 800 }
+    : { url: `${SITE_URL}/og-default.png`, width: 1200, height: 630 };
 
+  // As the WhatsApp mock writes it (`7010:30258`): "Puzzle ID #Jp2n9A ·
+  // Score 1500 · Time 23:20".
   const description = [
-    score != null ? `Score ${score.toLocaleString("en-US")}` : null,
+    `Puzzle ID #${id}`,
+    score != null ? `Score ${score}` : null,
     time != null ? `Time ${formatTime(time)}` : null,
-    `Puzzle ID ${id}`,
   ]
     .filter(Boolean)
     .join(" · ");
@@ -50,13 +57,13 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
       url: `${SITE_URL}/puzzle/${id}`,
       siteName: "Sudoku Carve",
       type: "website",
-      images: [{ url: image, width: 1200, height: 630, alt: "The shared puzzle" }],
+      images: [{ ...image, alt: "The shared puzzle" }],
     },
     twitter: {
       card: "summary_large_image",
       title: SHARE_HEADLINE,
       description,
-      images: [image],
+      images: [image.url],
     },
   };
 }
