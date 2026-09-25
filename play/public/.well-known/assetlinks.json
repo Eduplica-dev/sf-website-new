@@ -5,7 +5,7 @@
       "namespace": "android_app",
       "package_name": "com.Eduplica.SudokuForge",
       "sha256_cert_fingerprints": [
-        "PASTE_THE_APP_SIGNING_KEY_SHA256_FROM_PLAY_CONSOLE"
+        "CC:5D:29:44:0D:F8:14:26:A1:19:E5:34:DA:06:90:5C:37:B3:4E:19:5B:7D:91:EB:EE:80:B5:C3:9F:17:9C:A0"
       ]
     }
   }
