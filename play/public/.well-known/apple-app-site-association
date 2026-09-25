@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["LLVCU2S429.com.Eduplica.SudokuForge"],
+        "components": [{ "/": "/puzzle/*", "comment": "Shared puzzles open the game" }],
+        "appID": "LLVCU2S429.com.Eduplica.SudokuForge",
+        "paths": ["/puzzle/*"]
+      }
+    ]
+  }
+}

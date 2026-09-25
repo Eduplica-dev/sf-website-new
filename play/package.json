@@ -1,0 +1,22 @@
+{
+  "name": "sudoku-carve-play",
+  "version": "1.0.0",
+  "private": true,
+  "description": "play.eduplica.com - where Sudoku Carve's shared puzzle links land",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}

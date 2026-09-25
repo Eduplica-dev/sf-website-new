@@ -1,0 +1,5 @@
+# GitHub Pages (eduplica.com) publishes this repository as it is. `play/` is
+# the source of play.eduplica.com, which Vercel builds and serves - it must not
+# be published here as loose files.
+exclude:
+  - play
