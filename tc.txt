@@ -1,117 +1,70 @@
 Terms & Conditions
 1. Introduction
-Welcome to Sudoku Forge (the “App”), operated by Shabake OÜ, an Estonian private limited company, trading under the brand name Eduplica (“we”, “our”, “us”).
+Welcome to Sudoku Carve (the “App”), operated by Shabake OÜ, an Estonian private limited company, trading under the brand name Eduplica (“we”, “our”, “us”).
 By accessing or using the App, you agree to be bound by these Terms and Conditions (“Terms”). If you do not agree, please do not use the App.
 These Terms govern your use of the App, including any services, features, content, and in-app purchases. Please read them carefully.
-
 2. Eligibility
 You must be at least 13 years old to use the App.
 If you are under the age of 18, you confirm that you have obtained consent from a parent or legal guardian to use the App.
 By using the App, you confirm that you meet these requirements.
-
 3. In-App Purchases
 The App offers optional in-app purchases, including but not limited to:
-Ad-Free Mode
-
-
-Game Currency
-
-
-Hints
-
-
-Special Characters and Avatars
-
-
-Subscription programs (e.g., premium features, daily rewards)
-
-
+• Remove forced Ads
+• Mosanite as the main game currency
+• SKIPS as skip ads tokens
+• Membership programs (e.g., ad-free experience and enhanced rewards)
 All purchases are final and non-refundable, except where required by applicable law. In-app purchases are processed by the Google Play Store or Apple App Store, and your rights related to purchases are subject to their respective terms and policies.
 Nothing in these Terms limits any mandatory consumer rights you may have under applicable law, including EU consumer protection regulations.
-
 4. Ads and Third-Party Content
 The App displays advertisements and content provided by third-party networks. We do not control and are not responsible for the content, accuracy, availability, or practices of such third parties.
 Your interactions with third-party ads or services are governed by their respective terms and privacy policies.
-
 5. Gameplay, Scoring, and Rewards
-Sudoku Forge includes gameplay systems such as scoring, rankings, and rewards. Rewards may include:
-In-game hints
-
-
-Temporary premium access
-
-
-Skip-ad tokens
-
-
-Mosanite (the universal fragments used as in-game currency)
-
-
-Fragments (character-specific fragments)
-
-
+Sudoku Carve includes gameplay systems such as scoring, rankings, and rewards. Rewards may include:
+• In-game hints
+• Temporary premium access
+• Skips (Skip-ad tokens)
+• Mosanite (the universal fragments used as in-game currency)
+• Fragments (character-specific fragments)
 All rewards, currencies, and virtual items are virtual, have no real-world monetary value, and cannot be exchanged for real money, transferred outside the App, or redeemed for cash or goods.
 We reserve the right to modify, balance, reset, or remove gameplay systems, rewards, or virtual items at any time.
-
 6. User Conduct
 By using the App, you agree to:
-Play fairly and not engage in cheating, hacking, automation, or use of unauthorized tools
-
-
-Respect other users and avoid offensive, abusive, or harmful behavior, including in usernames or avatars
-
-
-Not use the App for unlawful, fraudulent, or harmful activities
-
-
+• Play fairly and not engage in cheating, hacking, automation, or use of unauthorized tools
+• Respect other users and avoid offensive, abusive, or harmful behavior, including in usernames or avatars
+• Not use the App for unlawful, fraudulent, or harmful activities
 We reserve the right to suspend or terminate accounts that violate these rules, with or without prior notice.
-
 7. User Accounts and Login
-The App allows login using third-party authentication services, such as Google Sign-In or Apple Sign-In / Game Center.
-By logging in, you consent to the sharing of limited data (such as profile name or avatar) as necessary for gameplay and personalization. Please refer to our Privacy Policy for further details.
-
+The App allows users to optionally link their account using third-party authentication services, such as Google Sign-In or Apple Sign-In / Game Center, in order to save and synchronize gameplay progress.
+When you choose to link your account, we may receive limited information from the authentication provider, such as your user identifier, display name, profile image, and, where available, your email address. This information is used solely for account linking, progress synchronization, and personalized gameplay.
+For more information on how your data is handled, please refer to our Privacy Policy.
 8. Feedback and Contact
 You may submit feedback, suggestions, or reports through the App’s “Contact Us” feature, which may require providing an email address.
 By submitting feedback, you grant us a non-exclusive, worldwide, royalty-free right to use, modify, and incorporate such feedback into the App without compensation or obligation.
-
 9. Data Collection and Privacy
 We collect and process data as described in our Privacy Policy, including:
-Personal data (e.g., email address when contacting support)
-
-
-Gameplay and interaction data (e.g., scores, actions, progress)
-
-
-Analytics and performance data via third-party tools
-
-
+• Personal data (e.g., email address when contacting support)
+• Gameplay and interaction data (e.g., scores, actions, progress)
+• Analytics and performance data via third-party tools
 For GDPR purposes, the data controller is Shabake OÜ.
-You may request data access or deletion via the “Contact Us” feature, subject to applicable legal requirements.
-
+You may delete your account and associated data directly within the App by navigating to Menu → Account → Delete Account. For other data requests, contact us at support@eduplica.com.
 10. Intellectual Property
 All content in the App, including but not limited to game design, artwork, graphics, audio, text, trademarks, and code, is owned by Shabake OÜ, its licensors, or partners, and is protected by intellectual property laws.
 You may not copy, modify, distribute, sell, or create derivative works from any part of the App without prior written permission.
 License
 We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes, in accordance with these Terms.
-
 11. Disclaimers
 The App is provided “as is” and “as available”, without warranties of any kind, whether express or implied.
 We do not guarantee that the App will be uninterrupted, error-free, secure, or meet your expectations.
-
 12. Limitation of Liability
 To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages, including loss of data, loss of profits, or loss of use, arising out of or related to your use of the App.
-
 13. Termination
 We may suspend or terminate your access to the App at any time, with or without notice, if you violate these Terms or for any reason at our sole discretion.
 Upon termination, your license to use the App will immediately cease.
-
 14. Changes to These Terms
 We may update these Terms from time to time. Significant changes will be communicated via the App or other appropriate channels.
 Continued use of the App after changes take effect constitutes acceptance of the revised Terms.
-
 15. Governing Law
 These Terms are governed by the laws of Estonia, without regard to conflict-of-law principles.
 Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Estonia.
-
 16. Contact Us
 If you have any questions or concerns regarding these Terms, please contact us at: support@eduplica.com
