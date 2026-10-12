@@ -3,340 +3,372 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sudoku Carve – Unleash Your Mastery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #1E1E1E;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      padding: 0 40px;
-      gap: 24px;
-    }
-
-    .nav-logo img {
-      width: 73px;
-      height: auto;
-    }
-
-    .nav-links {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 19px;
-      color: #1E1E1E;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .nav-links a:hover { opacity: 0.6; }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      background: linear-gradient(270deg, #F8E4CF 0%, #FFFFFF 49.82%, #DED7F4 99.99%);
-      border-radius: 0 0 40px 40px;
-      overflow: hidden;
-    }
-
-    /* ── DECORATIVE CIRCLES ── */
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    /* Ellipse 4 – large orange/pink, between text and phones */
-    .circle-orange {
-      width: 146px; height: 146px;
-      left: calc(887 / 1920 * 100%);
-      top: 209px;
-      background: linear-gradient(90deg, #FA5958 0%, #F5658F 50.74%, #FDB653 100%);
-    }
-
-    /* Ellipse 5 – large purple, top-right, half clipped */
-    .circle-purple-large {
-      width: 90px; height: 90px;
-      left: calc(1505 / 1920 * 100%);
-      top: -45px;
-      background: linear-gradient(90deg, #DD31FF 0%, #7D28EB 50%, #622DFD 100%);
-    }
-
-    /* Ellipse 6 – small lavender, right area */
-    .circle-lavender {
-      width: 24px; height: 24px;
-      left: calc(1459 / 1920 * 100%);
-      top: 163px;
-      background: linear-gradient(180deg, #DAA5DE 0%, #AC8BF0 100%);
-    }
-
-    /* Ellipse 7 – small blue, center-left area */
-    .circle-blue {
-      width: 32px; height: 32px;
-      left: calc(699 / 1920 * 100%);
-      top: 143px;
-      background: linear-gradient(180deg, #BCC7FA 0%, #B0A0F0 100%);
-    }
-
-    /* Ellipse 8 – tiny pink, far left */
-    .circle-pink {
-      width: 20px; height: 20px;
-      left: calc(136 / 1920 * 100%);
-      top: 459px;
-      background: linear-gradient(180deg, #EEC7EE 0%, #F9BED0 100%);
-    }
-
-    /* ── HERO INNER LAYOUT ── */
-    /* Matches Figma: Frame 31 at left:196px, top:225.75px */
-    .hero-content {
-      position: absolute;
-      left: 196px;
-      top: 225.75px;
-      display: flex;
-      flex-direction: column;
-      gap: 200px;
-    }
-
-    /* Frame 30 */
-    .hero-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      width: 733px;
-    }
-
-    /* Frame 3 */
-    .hero-title-block {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      width: 733px;
-    }
-
-    .hero-title {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 72px;
-      line-height: 80px;
-      color: #000000;
-      width: 733px;
-    }
-
-    .hero-subtitle {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
-      color: #383838;
-      width: 585px;
-    }
-
-    /* Store badges */
-    .store-badges {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .store-badges a {
-      display: block;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-
-    .store-badges a:hover {
-      opacity: 0.85;
-      transform: translateY(-2px);
-    }
-
-    .store-badges img {
-      height: 52px;
-      width: auto;
-    }
-
-    /* Scroll hint */
-    .scroll-hint {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 8px;
-      width: 230px;
-    }
-
-    .scroll-hint img {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
-
-    .scroll-hint span {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 17px;
-      color: #383838;
-    }
-
-    /* ── PHONES ── */
-    /* Matches Figma: left:1128.19px, top:169.95px, 617.97x670.6px */
-    .hero-phones {
-      position: absolute;
-      left: calc(1128.19 / 1920 * 100%);
-      top: 169.95px;
-      width: calc(617.97 / 1920 * 100%);
-      max-width: 618px;
-    }
-
-    .hero-phones img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1400px) {
-      .hero-content {
-        left: clamp(40px, 10vw, 196px);
-      }
-      .hero-title { font-size: clamp(40px, 4.5vw, 72px); line-height: 1.15; }
-      .hero-title-block, .hero-text-block, .hero-title { width: auto; max-width: 600px; }
-      .hero-subtitle { width: auto; max-width: 500px; }
-    }
-
-    @media (max-width: 1100px) {
-      .hero {
-        min-height: auto;
-        padding-bottom: 60px;
-      }
-      .hero-content {
-        position: relative;
-        left: auto;
-        top: auto;
-        padding: 120px 40px 60px;
-        gap: 48px;
-        align-items: flex-start;
-      }
-      .hero-phones {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 80%;
-        max-width: 500px;
-        margin: 0 auto;
-      }
-      .hero-title { font-size: clamp(36px, 5vw, 64px); line-height: 1.1; }
-      .hero-content { gap: 48px; }
-    }
-
-    @media (max-width: 700px) {
-      nav { padding: 20px 24px; }
-      .nav-links { gap: 20px; }
-      .nav-links a { font-size: 14px; }
-      .hero-content { padding: 90px 24px 48px; }
-      .store-badges { flex-direction: column; align-items: flex-start; }
-      .hero-title { font-size: clamp(32px, 8vw, 48px); }
-      .hero-subtitle { font-size: 16px; }
-    }
-  </style>
+  <title>Eduplica — Sudoku Carve: swap the numbers, keep the logic</title>
+  <meta name="description" content="Eduplica makes friendly brain games. Sudoku Carve is classic sudoku you can play with numbers, animals or food — free on iPhone, iPad and Android." />
+  <meta property="og:title" content="Eduplica — Sudoku Carve" />
+  <meta property="og:description" content="Classic sudoku you can play with numbers, animals or food. Free on iPhone, iPad and Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eduplica.com/" />
+  <meta name="theme-color" content="#43288B" />
+  <link rel="icon" href="assets/app-icon.webp" type="image/webp" />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-latin-700-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-400-normal.woff2" crossorigin />
+  <link rel="preload" as="image" href="assets/phone-iphone-ingame.webp" media="(min-width: 700px)" />
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <img src="logo.png" alt="Eduplica logo" />
-  </div>
-  <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#about">About Us</a></li>
-    <li><a href="#contact">Contact Us</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-
-  <!-- Decorative circles -->
-
-
-
-  <div class="circle circle-blue"></div>
-  <div class="circle circle-pink"></div>
-
-  <!-- Phones (right side, absolute) -->
-  <div class="hero-phones">
-    <img src="phones.png" alt="Sudoku Carve app screenshots" />
-  </div>
-
-  <!-- Left: text + badges + scroll hint -->
-  <div class="hero-content">
-
-    <div class="hero-text-block">
-      <div class="hero-title-block">
-        <h1 class="hero-title">Sudoku Carve<br>Unleash your mastery now</h1>
-        <p class="hero-subtitle">
-          Dive into the world of Sudoku with our fun emoji-themed mobile app! Challenge your brain with colorful puzzles that keep you entertained for hours. Whether you're a beginner or a Sudoku master, our app offers a variety of levels to suit everyone. Join the emoji adventure and sharpen your skills while having a blast!
-        </p>
-      </div>
-
-      <div class="store-badges">
-        <a href="#" aria-label="Download on the App Store">
-          <img src="apple.png" alt="Download on the App Store" />
-        </a>
-        <a href="#" aria-label="Get it on Google Play">
-          <img src="android.png" alt="Get it on Google Play" />
-        </a>
-      </div>
+<!-- ───────────── NAV (sticky) ───────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="#top" aria-label="Eduplica — home">
+      <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+      <span class="logo__word">eduplica</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#games">Games</a>
+      <a href="#community">Community</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__download" href="#download">Download</a>
+      <button class="nav__menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <div class="scroll-hint">
-      <img src="arrow.png" alt="" />
-      <span>Scroll down to explore features</span>
-    </div>
-
   </div>
+</header>
 
+<!-- ───────────── MENU (phone + tablet) ───────────── -->
+<div class="menu" id="menu" hidden>
+  <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="menu__top">
+      <a class="logo" href="#top" aria-label="Eduplica — home">
+        <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+        <span class="logo__word">eduplica</span>
+      </a>
+      <button class="menu__close" id="menuClose" type="button" aria-label="Close menu"><span></span><span></span></button>
+    </div>
+    <nav class="menu__links" aria-label="Main">
+      <a href="#games">Games</a>
+      <a href="#community">Community</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary menu__download" href="#download">Download</a>
+    <a class="menu__discord" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">
+      <img src="assets/discord.svg" alt="" width="24" height="24" /><span>Join our Discord</span>
+    </a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ───────────── 01 HERO ───────────── -->
+<section class="hero" id="hero">
+  <div class="blob hero__blob1"></div>
+  <div class="blob hero__blob2"></div>
+  <div class="blob hero__blob3"></div>
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <a class="pill reveal" href="#milestones"><span class="pill__dot"></span>New update is live — see what’s new&nbsp;&nbsp;→</a>
+      <h1 class="h1 reveal"><span class="h1__line">Swap the numbers.</span><br /><span class="h1__line h1__line--accent">Keep the logic.</span></h1>
+      <p class="hero__text reveal">Sudoku Carve is classic sudoku you can play with numbers, animals or food. Pick your set, pick your pace, and solve a new puzzle every day.</p>
+      <ul class="stats reveal">
+        <li class="stat"><span class="stat__num">3,600+</span><span class="stat__label">Arcade levels</span></li>
+        <li class="stat"><span class="stat__num">50</span><span class="stat__label">Characters to collect</span></li>
+        <li class="stat"><span class="stat__num">4</span><span class="stat__label">Classic difficulties</span></li>
+      </ul>
+    </div>
+    <div class="hero__stage" aria-hidden="true">
+      <div class="device device--android hero__android">
+        <img src="assets/phone-android-levels.webp" srcset="assets/phone-android-levels-sm.webp 405w, assets/phone-android-levels.webp 596w" sizes="(max-width: 699px) 188px, (max-width: 1199px) 264px, 292px" alt="" width="596" height="1245" fetchpriority="high" />
+      </div>
+      <div class="device device--iphone hero__iphone">
+        <img src="assets/phone-iphone-ingame.webp" srcset="assets/phone-iphone-ingame-sm.webp 479w, assets/phone-iphone-ingame.webp 705w" sizes="(max-width: 699px) 222px, (max-width: 1199px) 300px, 339px" alt="" width="705" height="1405" fetchpriority="high" />
+      </div>
+      <div class="tile tile--lg hero__tile-toucan float"><img src="assets/toucan.webp" alt="" width="240" height="240" /></div>
+      <div class="tile hero__tile-pom float float--2"><img src="assets/pomegranate.webp" alt="" width="272" height="272" /></div>
+      <div class="tile tile--lg hero__tile-star float float--3"><img src="assets/starfruit.webp" alt="" width="240" height="240" /></div>
+      <div class="tile hero__tile-cake float float--4"><img src="assets/cake.webp" alt="" width="272" height="272" /></div>
+    </div>
+  </div>
 </section>
 
-<!-- Sections below -->
-<section id="features" style="height:200px;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:24px;color:#aaa;">Features section coming soon</section>
+<!-- ───────────── 02 GAMES ───────────── -->
+<section class="games section" id="games">
+  <div class="container">
+    <p class="eyebrow eyebrow--center reveal">OUR GAME</p>
+    <h2 class="h2 h2--center reveal">Meet Sudoku Carve</h2>
+    <p class="section__text section__text--center reveal">Our first game: the sudoku you know, with a fresh new look. More games are on the way.</p>
+    <div class="tabs reveal" role="tablist" aria-label="Games">
+      <button class="tab is-active" role="tab" aria-selected="true" type="button">
+        <img class="tab__icon" src="assets/app-icon.webp" alt="" width="28" height="28" /><span>Sudoku Carve</span>
+      </button>
+    </div>
+    <div class="games__grid">
+      <div class="panel reveal" aria-hidden="true">
+        <div class="blob panel__blob"></div>
+        <div class="device device--android panel__phone">
+          <img src="assets/phone-android-sets.webp" srcset="assets/phone-android-sets-sm.webp 444w, assets/phone-android-sets.webp 654w" sizes="(max-width: 699px) 188px, (max-width: 1199px) 226px, 320px" alt="" width="654" height="1365" loading="lazy" />
+        </div>
+        <div class="tile panel__tile-grapes float"><img src="assets/grapes.webp" alt="" width="256" height="256" loading="lazy" /></div>
+        <div class="tile panel__tile-crab float float--3"><img src="assets/crab.webp" alt="" width="256" height="256" loading="lazy" /></div>
+      </div>
+      <ul class="cards">
+        <li class="card reveal">
+          <div class="card__icon"><img src="assets/octopus.webp" alt="" width="240" height="240" loading="lazy" /></div>
+          <h3 class="card__title">Play with characters</h3>
+          <p class="card__text">Swap numbers for animals or food. 50 characters, 25 in each set.</p>
+        </li>
+        <li class="card reveal">
+          <div class="card__icon"><img src="assets/coconut.webp" alt="" width="240" height="240" loading="lazy" /></div>
+          <h3 class="card__title">Arcade worlds</h3>
+          <p class="card__text">2 worlds with 17 chapters each and 1,800+ levels per world.</p>
+        </li>
+        <li class="card reveal">
+          <div class="card__icon card__icon--nine"><span>9</span></div>
+          <h3 class="card__title">Classic mode</h3>
+          <p class="card__text">Easy to Very Hard. Share any grid with its Puzzle ID.</p>
+        </li>
+        <li class="card reveal">
+          <div class="card__icon card__icon--cal"><img src="assets/calendar-icon.webp" alt="" width="331" height="336" loading="lazy" /></div>
+          <h3 class="card__title">A new puzzle every day</h3>
+          <p class="card__text">Solve today’s puzzle in the Calendar and keep your streak.</p>
+        </li>
+        <li class="card reveal">
+          <div class="card__icon"><img src="assets/crown-coin.webp" alt="" width="240" height="240" loading="lazy" /></div>
+          <h3 class="card__title">Weekly challenge</h3>
+          <p class="card__text">Finish the 7-Days Challenge to win the grand prize.</p>
+        </li>
+        <li class="card reveal">
+          <div class="card__icon"><img src="assets/gift.webp" alt="" width="240" height="240" loading="lazy" /></div>
+          <h3 class="card__title">Daily rewards</h3>
+          <p class="card__text">Claim a gift every day in a 7-day reward cycle.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-<footer style="padding:24px 40px;display:flex;justify-content:center;align-items:center;gap:24px;border-top:1px solid #eee;">
-  <a href="privacy-policy.html" style="font-family:'Inter',sans-serif;font-size:12px;color:#aaa;text-decoration:none;">Privacy Policy</a>
-  <a href="terms-conditions.html" style="font-family:'Inter',sans-serif;font-size:12px;color:#aaa;text-decoration:none;">Terms &amp; Conditions</a>
-  <a href="delete-data.html" style="font-family:'Inter',sans-serif;font-size:12px;color:#aaa;text-decoration:none;">Delete My Data</a>
+<!-- ───────────── 03 COMMUNITY ───────────── -->
+<section class="community section" id="community">
+  <div class="container">
+    <div class="banner reveal">
+      <div class="blob banner__blob1"></div>
+      <div class="blob banner__blob2"></div>
+      <div class="banner__copy">
+        <p class="eyebrow eyebrow--light">COMMUNITY</p>
+        <h2 class="h2 h2--light banner__title">Join the Sudoku Carve <br class="banner__br" />community on Discord</h2>
+        <p class="banner__text">Share Puzzle IDs, swap tips, hear about updates first and tell us what to build next.</p>
+        <a class="btn btn--white banner__cta" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">
+          <img src="assets/discord.svg" alt="" width="24" height="24" /><span>Join Discord</span>
+        </a>
+        <p class="banner__note"><img src="assets/mosanite.webp" alt="" width="24" height="24" /><span>+100 Mosanite when you join from the game</span></p>
+      </div>
+      <div class="board" id="board" aria-hidden="true">
+        <div class="board__cell board__cell--img"><img src="assets/toucan.webp" alt="" width="240" height="240" loading="lazy" /></div>
+        <div class="board__cell board__cell--empty"></div>
+        <div class="board__cell board__cell--num">3</div>
+        <div class="board__cell board__cell--empty"></div>
+        <div class="board__cell board__cell--img"><img src="assets/butterfly.webp" alt="" width="280" height="280" loading="lazy" /></div>
+        <div class="board__cell board__cell--empty"></div>
+        <div class="board__cell board__cell--num">7</div>
+        <div class="board__cell board__cell--empty"></div>
+        <div class="board__cell board__cell--img"><img src="assets/macaron.webp" alt="" width="280" height="280" loading="lazy" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 04 MILESTONES ───────────── -->
+<section class="milestones section" id="milestones">
+  <div class="container">
+    <div class="milestones__head">
+      <p class="eyebrow reveal">MILESTONES</p>
+      <h2 class="h2 reveal">Every update, one card at a time</h2>
+      <div class="milestones__row">
+        <p class="section__text milestones__text reveal">From our first beta to today. Keep track of our progress and stay tuned for further updates and improvements.</p>
+      <div class="carousel__controls carousel__controls--top" id="controlsTop">
+        <span class="carousel__counter" id="counterTop">10–12 of 12</span>
+        <button class="arrow" id="prevTop" type="button" aria-label="Previous versions">←</button>
+        <button class="arrow" id="nextTop" type="button" aria-label="Newer versions" disabled>→</button>
+      </div>
+    </div>
+    <div class="carousel" id="carousel">
+      <ul class="carousel__track" id="cardTrack"></ul>
+    </div>
+    <div class="carousel__controls carousel__controls--bottom" id="controlsBottom">
+      <span class="carousel__counter" id="counterBottom">12 of 12</span>
+      <div class="carousel__arrows">
+        <button class="arrow" id="prevBottom" type="button" aria-label="Previous versions">←</button>
+        <button class="arrow" id="nextBottom" type="button" aria-label="Newer versions" disabled>→</button>
+      </div>
+    </div>
+    <div class="vtrack" id="vtrack" aria-hidden="true">
+      <div class="vtrack__line"></div>
+      <div class="vtrack__range" id="vrange"></div>
+      <div class="vtrack__dots" id="vdots"></div>
+      <p class="vtrack__caption" id="vcaption"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 05 ABOUT ───────────── -->
+<section class="about section" id="about">
+  <div class="container about__grid">
+    <div class="about__copy">
+      <p class="eyebrow reveal">ABOUT US</p>
+      <h2 class="h2 reveal">We make brains smile.</h2>
+      <p class="about__lead reveal">Eduplica is a small, independent game studio. We make friendly brain games that aim to relax you, yet challenge you, and spark a little joy with every tap.</p>
+      <p class="about__company reveal">Eduplica is a brand of Shabake OÜ, based in Estonia.</p>
+    </div>
+    <ul class="cards cards--values">
+      <li class="card card--value reveal">
+        <div class="card__icon"><img src="assets/toucan.webp" alt="" width="240" height="240" loading="lazy" /></div>
+        <h3 class="card__title">Our mission</h3>
+        <p class="card__text">Keep the classic heart of sudoku, and make every puzzle feel like yours.</p>
+      </li>
+      <li class="card card--value reveal">
+        <div class="card__icon"><img src="assets/dragonfruit.webp" alt="" width="240" height="240" loading="lazy" /></div>
+        <h3 class="card__title">Who we are</h3>
+        <p class="card__text">A small team of friends and trusted partners who are passionate about overall user experience.</p>
+      </li>
+      <li class="card card--value reveal">
+        <div class="card__icon"><img src="assets/blueberry.webp" alt="" width="240" height="240" loading="lazy" /></div>
+        <h3 class="card__title">What drives us</h3>
+        <p class="card__text">Simple ideas, clean design and happy players. Brain training should feel like play, not homework.</p>
+      </li>
+      <li class="card card--value reveal">
+        <div class="card__icon"><img src="assets/watermelon.webp" alt="" width="240" height="240" loading="lazy" /></div>
+        <h3 class="card__title">How we design</h3>
+        <p class="card__text">Fair puzzles and clear rules, for a quick break or deep focus. Every session should feel good.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ───────────── 06 CONTACT ───────────── -->
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="contact__card reveal">
+      <div class="blob contact__blob"></div>
+      <div class="contact__copy">
+        <p class="eyebrow eyebrow--light">CONTACT US</p>
+        <h2 class="h2 h2--light contact__title">We’d love to <br class="contact__br" />hear from you</h2>
+        <p class="contact__text">Questions about your account, ideas for the game, or want to work or invest with us? Pick a topic and send us a note.</p>
+        <p class="contact__email">Or email us at <a href="mailto:support@eduplica.com"><strong>support@eduplica.com</strong></a></p>
+        <a class="contact__discord" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">Quick question? Ask the community on Discord&nbsp;&nbsp;→</a>
+      </div>
+      <form class="form" id="contactForm" novalidate>
+        <p class="form__label" id="topicLabel">What brings you here?</p>
+        <div class="topics" role="radiogroup" aria-labelledby="topicLabel">
+          <span class="topics__thumb" aria-hidden="true"></span>
+          <label class="topic is-active"><input type="radio" name="topic" value="Share your thoughts" checked /><span class="topic__radio"></span><span class="topic__text">Share your thoughts</span></label>
+          <label class="topic"><input type="radio" name="topic" value="Work with us" /><span class="topic__radio"></span><span class="topic__text">Work with us</span></label>
+          <label class="topic"><input type="radio" name="topic" value="Invest with us" /><span class="topic__radio"></span><span class="topic__text">Invest with us</span></label>
+        </div>
+        <label class="form__label" for="fEmail">Email</label>
+        <input class="input" id="fEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+        <label class="form__label" for="fSubject">Subject</label>
+        <div class="select">
+          <select class="input input--select" id="fSubject" name="subject" required>
+            <option value="" disabled selected>Choose a subject</option>
+            <option>Account</option>
+            <option>Gameplay</option>
+            <option>Suggestions</option>
+            <option>Other</option>
+          </select>
+          <svg class="select__chevron" width="12" height="6" viewBox="0 0 12 6" fill="none" aria-hidden="true"><path d="M1 0.5L6 5.5L11 0.5" stroke="#6E6B85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <label class="form__label" for="fMessage">Message</label>
+        <textarea class="input input--area" id="fMessage" name="message" placeholder="Type your message here" required></textarea>
+        <p class="form__hint" id="formHint" hidden>Attach your CV to the email that opens — it’s optional.</p>
+        <button class="btn btn--primary form__send" type="submit">Send message</button>
+        <p class="form__privacy">By sending, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── 07 DOWNLOAD ───────────── -->
+<section class="download section" id="download">
+  <div class="container">
+    <div class="download__card reveal">
+      <div class="blob download__blob"></div>
+      <div class="download__copy">
+        <p class="eyebrow">GET THE GAME</p>
+        <h2 class="h2 download__title">Your next puzzle<br />is waiting</h2>
+        <p class="download__text download__text--full">Free on iPhone, iPad and Android. No sign-up needed to start playing.</p>
+        <p class="download__text download__text--short">Available on all stores for free.</p>
+        <div class="badges">
+          <a href="https://apps.apple.com/app/id6761488124" target="_blank" rel="noopener" aria-label="Download on the App Store"><img src="assets/badge-appstore.webp" alt="Download on the App Store" width="566" height="168" loading="lazy" /></a>
+          <a href="https://play.google.com/store/apps/details?id=com.Eduplica.SudokuForge" target="_blank" rel="noopener" aria-label="Get it on Google Play"><img src="assets/badge-googleplay.webp" alt="Get it on Google Play" width="566" height="168" loading="lazy" /></a>
+        </div>
+        <div class="identity">
+          <img class="identity__icon" src="assets/app-icon.webp" alt="Sudoku Carve app icon" width="392" height="392" loading="lazy" />
+          <div class="identity__name"><span class="identity__title">Sudoku Carve</span><span class="identity__sub">Logic Puzzle</span></div>
+        </div>
+      </div>
+      <div class="download__stage" aria-hidden="true">
+        <div class="device device--iphone download__phone" id="parallaxPhone">
+          <img src="assets/phone-iphone-home.webp" srcset="assets/phone-iphone-home-sm.webp 433w, assets/phone-iphone-home.webp 637w" sizes="(max-width: 699px) 213px, (max-width: 1199px) 271px, 310px" alt="" width="637" height="1285" loading="lazy" />
+        </div>
+        <div class="tile download__tile-burger float"><img src="assets/burger.webp" alt="" width="272" height="272" loading="lazy" /></div>
+        <div class="tile download__tile-kiwi float float--2"><img src="assets/kiwi.webp" alt="" width="272" height="272" loading="lazy" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────── 08 FOOTER ───────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="#top" aria-label="Eduplica — home">
+          <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+          <span class="logo__word">eduplica</span>
+        </a>
+        <p class="footer__tagline">Friendly brain games by Eduplica.</p>
+        <a class="footer__social" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener" aria-label="Eduplica on Discord"><img src="assets/discord.svg" alt="" width="24" height="24" /></a>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Games</h4>
+          <a href="#games">Sudoku Carve</a>
+          <span class="footer__muted">More coming soon</span>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="#about">About us</a>
+          <a href="#milestones">Milestones</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <a href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">Discord</a>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="delete-data.html">Delete my data</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Eduplica. All rights reserved.</p>
+      <p class="footer__trademark">Apple and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </div>
 </footer>
 
+<script src="assets/site.js" defer></script>
 </body>
 </html>
