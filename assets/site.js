@@ -81,21 +81,22 @@
   }
 
   /* ---------------- milestones ----------------
-     One entry per released version. The weekly agent only adds an entry here:
-     { v, date, title (≤30 chars), bullets (1–4, ≤40 chars each) }. Newest last. */
+     One entry per released version. The release agent only adds an entry here:
+     { v, date ('Mon YYYY'), title (≤22 chars), bullets (1–4, ≤34 chars each) }. Newest last. */
   const MILESTONES = [
-    { v: 'v0.9',   date: '', title: 'First beta', bullets: [] },
-    { v: 'v1.0',   date: '', title: 'Store launch', bullets: [] },
-    { v: 'v1.0.1', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.2', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.3', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.4', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.5', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.6', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.7', date: '', title: 'Release', bullets: [] },
-    { v: 'v1.0.8', date: 'Aug 2026', title: 'Jump right in', bullets: ['Skip the tutorial anytime', 'Small fixes and polish'] },
-    { v: 'v1.0.9', date: 'Oct 2026', title: 'The big redesign', bullets: ['New home with Daily Rewards', 'Link Account to keep your progress', 'Share a puzzle as a card', 'New character art, made for tablets'] },
-    { v: 'v1.0.91', date: 'Oct 2026', title: 'Polish and fixes', bullets: ['Bug fixes and stability', 'Small polish across the game'] }
+    { v: 'v0.9',     date: 'Jun 2025', title: 'First beta', bullets: ['Early test build, new layout'] },
+    { v: 'v1.0',     date: 'May 2026', title: 'Store launch', bullets: ['Launch on both app stores', 'Numbers, animals or food sets', 'Arcade, Classic and Calendar modes'] },
+    { v: 'v1.0.1',   date: 'May 2026', title: 'Smoother play', bullets: ['Haptic feedback on moves', 'Scoreboard and tools fixes', 'Shop prices load live'] },
+    { v: 'v1.0.2',   date: 'Jun 2026', title: 'Shop opens', bullets: ['Shop bundles and purchases', 'Level and calendar fixes', 'Better character unlocking', 'A collectible redesigned'] },
+    { v: 'v1.0.3',   date: 'Jun 2026', title: 'Hello, Sudoku Carve', bullets: ['Sudoku Forge is now Sudoku Carve', 'Delete account from Settings', 'Updated Terms and Privacy', 'Smoother gameplay'] },
+    { v: 'v1.0.4',   date: 'Jun 2026', title: 'New icon', bullets: ['New app icon', 'Drag & Drop calibrated', 'Cells Customization layout', 'New name in the stores'] },
+    { v: 'v1.0.4.1', date: 'Jul 2026', title: 'Rewards and ads', bullets: ['Watch an ad for hints', '7-day streak rewards', 'Double rewards for members', 'Classic mode save fixes'] },
+    { v: 'v1.0.5',   date: 'Jul 2026', title: 'Member perks', bullets: ['Unlimited hints for members', 'In-game surveys with rewards', 'New store preview', 'Bug fixes'] },
+    { v: 'v1.0.6',   date: 'Jul 2026', title: 'Under the hood', bullets: ['Backend fixes', 'Updated store preview', 'Display fixes'] },
+    { v: 'v1.0.7',   date: 'Aug 2026', title: 'Learn as you play', bullets: ['Brand-new guided tutorial', 'New puzzle generator', 'Delete account in the app'] },
+    { v: 'v1.0.8',   date: 'Aug 2026', title: 'Jump right in', bullets: ['Skip the tutorial anytime', 'Puzzle generator V3', 'Ads and offline saving fixes', 'Small fixes and polish'] },
+    { v: 'v1.0.9',   date: 'Oct 2026', title: 'The big redesign', bullets: ['New home with Daily Rewards', 'Link Account to keep your progress', 'Share a puzzle as a card', 'New character art, made for tablets'] },
+    { v: 'v1.0.91',  date: 'Oct 2026', title: 'Polish and fixes', bullets: ['Bug fixes and stability', 'Small polish across the game'] }
   ];
 
   const track = document.getElementById('cardTrack');
