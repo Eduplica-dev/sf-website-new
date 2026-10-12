@@ -41,7 +41,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   font-family: var(--font-text);
   color: var(--ink);
@@ -333,8 +333,11 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 600; }
 .vdot__label { display: none; position: absolute; top: 28px; left: 50%; transform: translateX(-50%); font-weight: 500; font-size: 12px; line-height: 16px; color: var(--grey-light); white-space: nowrap; }
 .vdot.is-active .vdot__label { color: var(--ink); }
 .vtrack__caption { position: absolute; right: 0; top: 24px; font-weight: 500; font-size: 13px; line-height: 20px; color: var(--ink); }
-.vdot__tip { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; font-size: 12px; line-height: 16px; padding: 6px 10px; border-radius: 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .15s ease; }
-.vdot:hover .vdot__tip, .vdot:focus-visible .vdot__tip { opacity: 1; }
+.vdot__tip { display: none; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--ink); color: #fff; font-size: 12px; line-height: 16px; padding: 6px 10px; border-radius: 8px; white-space: nowrap; pointer-events: none; }
+.vdot:hover .vdot__tip, .vdot:focus-visible .vdot__tip { display: block; }
+/* the last dots' tips would poke past the viewport edge and widen the page on phones */
+.vdot:nth-last-child(-n+2) .vdot__tip { left: auto; right: 0; transform: none; }
+.vdot:nth-child(-n+2) .vdot__tip { left: 0; transform: none; }
 
 /* ============================================================
    05 ABOUT
