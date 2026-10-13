@@ -3,355 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delete Game Data – Sudoku Forge</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #1E1E1E;
-      overflow-x: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* ── NAV ── */
-    nav {
-      height: 100px;
-      display: flex;
-      align-items: center;
-      padding: 0 40px;
-      gap: 24px;
-      border-bottom: 1px solid #eee;
-    }
-    .nav-logo img { width: 73px; height: auto; }
-    .nav-links {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 16px;
-      font-weight: 400;
-      color: #1E1E1E;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-links a:hover { opacity: 0.6; }
-
-    /* ── PAGE CONTENT ── */
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 24px;
-      background: linear-gradient(135deg, #F8E4CF 0%, #FFFFFF 50%, #DED7F4 100%);
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 56px 48px;
-      max-width: 520px;
-      width: 100%;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
-    }
-
-    .card-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, #FA5958 0%, #F5658F 50%, #FDB653 100%);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-
-    .card-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: #fff;
-    }
-
-    .card h1 {
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1.2;
-      color: #000;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      font-size: 15px;
-      font-weight: 400;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 32px;
-    }
-
-    label {
-      display: block;
-      font-size: 14px;
-      font-weight: 700;
-      color: #1E1E1E;
-      margin-bottom: 8px;
-    }
-
-    input[type="email"] {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1.5px solid #DDD;
-      border-radius: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      color: #1E1E1E;
-      outline: none;
-      transition: border-color 0.2s;
-      margin-bottom: 16px;
-    }
-
-    input[type="email"]:focus {
-      border-color: #7D28EB;
-    }
-
-    input[type="email"]::placeholder { color: #AAA; }
-
-    textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border: 1.5px solid #DDD;
-      border-radius: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      color: #1E1E1E;
-      outline: none;
-      resize: vertical;
-      min-height: 100px;
-      transition: border-color 0.2s;
-      margin-bottom: 24px;
-    }
-
-    textarea:focus { border-color: #7D28EB; }
-    textarea::placeholder { color: #AAA; }
-
-    .warning-box {
-      background: #FFF4E5;
-      border: 1.5px solid #FDB653;
-      border-radius: 12px;
-      padding: 14px 16px;
-      font-size: 13px;
-      color: #7A5200;
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
-
-    button[type="submit"] {
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(90deg, #FA5958 0%, #F5658F 50%, #FDB653 100%);
-      border: none;
-      border-radius: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      cursor: pointer;
-      transition: opacity 0.2s, transform 0.1s;
-    }
-
-    button[type="submit"]:hover { opacity: 0.9; transform: translateY(-1px); }
-    button[type="submit"]:active { transform: translateY(0); }
-
-    /* ── SUCCESS STATE ── */
-    .success-message {
-      display: none;
-      text-align: center;
-      padding: 16px 0;
-    }
-
-    .success-message .check {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, #4CAF50, #66BB6A);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-
-    .success-message .check svg { width: 32px; height: 32px; fill: #fff; }
-
-    .success-message h2 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #000;
-      margin-bottom: 10px;
-    }
-
-    .success-message p {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 0;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      padding: 24px 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      border-top: 1px solid #eee;
-    }
-
-    footer a {
-      font-size: 12px;
-      color: #aaa;
-      text-decoration: none;
-    }
-
-    footer a:hover { color: #555; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 700px) {
-      nav { padding: 20px 24px; }
-      .nav-links { gap: 20px; }
-      .nav-links a { font-size: 14px; }
-      .card { padding: 36px 24px; }
-      .card h1 { font-size: 22px; }
-    }
-  </style>
+  <title>Delete Game Data – Sudoku Carve</title>
+  <meta name="description" content="Request the deletion of your Sudoku Carve account and game data." />
+  <meta property="og:title" content="Delete Game Data – Sudoku Carve" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eduplica.com/delete-data.html" />
+  <meta name="theme-color" content="#43288B" />
+  <link rel="icon" href="assets/app-icon.webp" type="image/webp" />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-latin-700-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-400-normal.woff2" crossorigin />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/legal.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <a href="index.html"><img src="logo.png" alt="Eduplica logo" /></a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="index.html#features">Features</a></li>
-    <li><a href="index.html#roadmap">Roadmap</a></li>
-    <li><a href="index.html#about">About Us</a></li>
-    <li><a href="index.html#contact">Contact Us</a></li>
-  </ul>
-</nav>
-
-<!-- MAIN -->
-<main>
-  <div class="card">
-
-    <div class="card-icon">
-      <!-- Trash icon -->
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 3h6l1 1h4v2H4V4h4L9 3zM5 7h14l-1 13H6L5 7zm4 2v9h1V9H9zm5 0v9h1V9h-1z"/>
-      </svg>
+<!-- ───────────── NAV (sticky) — same as the home page, links go back to its sections ───────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="index.html" aria-label="Eduplica — home">
+      <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+      <span class="logo__word">eduplica</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#games">Games</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#milestones">Milestones</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__download" href="index.html#download">Download</a>
+      <button class="nav__menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+</header>
 
-    <h1>Request Game Data Deletion</h1>
-    <p>Submit your email address below and we will permanently delete all game data associated with your account. This action cannot be undone.</p>
+<!-- ───────────── MENU (phone + tablet) ───────────── -->
+<div class="menu" id="menu" hidden>
+  <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="menu__top">
+      <a class="logo" href="index.html" aria-label="Eduplica — home">
+        <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+        <span class="logo__word">eduplica</span>
+      </a>
+      <button class="menu__close" id="menuClose" type="button" aria-label="Close menu"><span></span><span></span></button>
+    </div>
+    <nav class="menu__links" aria-label="Main">
+      <a href="index.html#games">Games</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#milestones">Milestones</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary menu__download" href="index.html#download">Download</a>
+    <a class="menu__discord" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">
+      <img src="assets/discord.svg" alt="" width="24" height="24" /><span>Join our Discord</span>
+    </a>
+  </div>
+</div>
 
-    <!-- FORM — replace YOUR_FORM_ID with your Formspree form ID -->
-    <form
-      id="deleteForm"
-      action="https://formspree.io/f/YOUR_FORM_ID"
-      method="POST"
-    >
-      <!-- Hidden fields to configure the email -->
-      <input type="hidden" name="_replyto" id="replyToField" value="" />
-      <input type="hidden" name="_subject" value="Game Data Deletion Request – Sudoku Forge" />
-      <input type="hidden" name="_to" value="dev@eduplica.com" />
+<main id="top">
 
-      <label for="email">Email address associated with your account</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="you@example.com"
-        required
-        autocomplete="email"
-      />
+<!-- ───────────── HEADER ───────────── -->
+<section class="lhead lhead--plain">
+  <div class="blob lhead__blob1" aria-hidden="true"></div>
+  <div class="blob lhead__blob2" aria-hidden="true"></div>
+  <div class="container">
+    <h1 class="lhead__title">Delete my data</h1>
+    <p class="lhead__meta">Request the deletion of your Sudoku Carve account and game data.</p>
+  </div>
+</section>
 
-      <label for="reason">Reason for deletion (optional)</label>
-      <textarea
-        id="reason"
-        name="reason"
-        placeholder="You can briefly describe why you'd like your data deleted…"
-      ></textarea>
+<!-- ───────────── REQUEST ───────────── -->
+<section class="dbody">
+  <div class="container">
+    <div>
+      <!-- the form card -->
+      <div class="dcard" id="dRequest">
+        <div class="dcard__icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M10.4998 3.5H17.4998L18.6665 4.66667H23.3332V7H4.6665V4.66667H9.33317L10.4998 3.5ZM5.83317 8.16667H22.1665L20.9998 23.3333H6.99984L5.83317 8.16667ZM10.4998 10.5V21H11.6665V10.5H10.4998ZM16.3332 10.5V21H17.4998V10.5H16.3332Z" fill="white"/></svg></div>
+        <h2 class="dcard__title">Request Game Data Deletion</h2>
+        <p class="dcard__text">Submit your email address below and we will permanently delete all game data associated with your account. This action cannot be undone.</p>
 
-      <div class="warning-box">
-        ⚠️ This will permanently delete all your game progress, scores, and account data. This action is <strong>irreversible</strong>.
+        <form class="dform" id="deleteForm" novalidate>
+          <label class="form__label" for="dEmail">Email address associated with your account</label>
+          <input class="input" id="dEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <p class="dform__error" id="dError" hidden>Please enter a valid email address.</p>
+          <label class="form__label" for="dReason">Reason for deletion (optional)</label>
+          <textarea class="input input--area" id="dReason" name="reason" placeholder="You can briefly describe why you’d like your data deleted…"></textarea>
+          <div class="dwarn"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10.0002 1.66699L0.833496 17.5003H19.1668L10.0002 1.66699ZM10.8335 14.167H9.16683V12.5003H10.8335V14.167ZM10.8335 10.8337H9.16683V7.50033H10.8335V10.8337Z" fill="#C98A1A"/></svg><p>This will permanently delete all your game progress, scores, and account data. This action is <strong>irreversible</strong>.</p></div>
+          <button class="btn btn--danger" type="submit">Submit Deletion Request</button>
+          <p class="dhelp">Trouble with the form? Email <a href="mailto:support@eduplica.com">support@eduplica.com</a>.</p>
+        </form>
       </div>
 
-      <button type="submit">Submit Deletion Request</button>
-    </form>
-
-    <!-- Success message shown after submission -->
-    <div class="success-message" id="successMsg">
-      <div class="check">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
-        </svg>
+      <!-- shown after Submit: the email app has opened with the request ready -->
+      <div class="dcard dsent" id="dSent" hidden>
+        <div class="dsent__circle"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M6 9.5C6 8.12 7.12 7 8.5 7H27.5C28.88 7 30 8.12 30 9.5V26.5C30 27.88 28.88 29 27.5 29H8.5C7.12 29 6 27.88 6 26.5V9.5ZM9.2 10L18 17.1L26.8 10H9.2ZM27 12.6L18.9 19.1C18.4 19.5 17.6 19.5 17.1 19.1L9 12.6V26H27V12.6Z" fill="white"/></svg></div>
+        <h2 class="dsent__title">Almost done</h2>
+        <p class="dsent__text">Your email app opened with your request ready. Press Send to finish.<br />Nothing opened? Email us at <a href="mailto:support@eduplica.com">support@eduplica.com</a>.</p>
+        <a class="btn btn--ghost" href="index.html">Back to home</a>
       </div>
-      <h2>Request Submitted</h2>
-      <p>We received your data deletion request and will process it within 30 days. A confirmation will be sent to your email.</p>
     </div>
 
+    <aside class="dinfos" aria-label="Good to know">
+      <div class="dinfo">
+        <h3>Prefer the game?</h3>
+        <p>In the game: Menu → Contact Us → “Request to delete account” → pick a reason → Send.</p>
+      </div>
+      <div class="dinfo">
+        <h3>What gets deleted</h3>
+        <p>All your game progress, scores and account data. This cannot be undone.</p>
+      </div>
+      <div class="dinfo">
+        <h3>When it happens</h3>
+        <p>Requests sent here are processed within 30 days. You get a confirmation by email.</p>
+      </div>
+      <div class="dinfo">
+        <h3>Questions?</h3>
+        <p>Email us at <a href="mailto:support@eduplica.com">support@eduplica.com</a>.</p>
+      </div>
+    </aside>
   </div>
+</section>
+
 </main>
 
-<!-- FOOTER -->
-<footer>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-conditions.html">Terms &amp; Conditions</a>
+<!-- ───────────── FOOTER — same as the home page ───────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="Eduplica — home">
+          <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+          <span class="logo__word">eduplica</span>
+        </a>
+        <p class="footer__tagline">Friendly brain games by Eduplica.</p>
+        <a class="footer__social" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener" aria-label="Eduplica on Discord"><img src="assets/discord.svg" alt="" width="24" height="24" /></a>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Games</h4>
+          <a href="index.html#games">Sudoku Carve</a>
+          <span class="footer__muted">More coming soon</span>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="index.html#about">About us</a>
+          <a href="index.html#milestones">Milestones</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <a href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">Discord</a>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="delete-data.html">Delete my data</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Eduplica. All rights reserved.</p>
+      <p class="footer__trademark">Apple and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </div>
 </footer>
 
-<script>
-  // Sync email field to _replyto for Formspree reply threading
-  document.getElementById('email').addEventListener('input', function () {
-    document.getElementById('replyToField').value = this.value;
-  });
-
-  // Handle Formspree AJAX submission for a seamless experience
-  const form = document.getElementById('deleteForm');
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const btn = form.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        form.style.display = 'none';
-        document.getElementById('successMsg').style.display = 'block';
-      } else {
-        btn.textContent = 'Submit Deletion Request';
-        btn.disabled = false;
-        alert('Something went wrong. Please try again or email us directly at dev@eduplica.com');
-      }
-    } catch {
-      btn.textContent = 'Submit Deletion Request';
-      btn.disabled = false;
-      alert('Network error. Please try again or email us directly at dev@eduplica.com');
-    }
-  });
-</script>
-
+<script src="assets/legal.js" defer></script>
 </body>
 </html>
