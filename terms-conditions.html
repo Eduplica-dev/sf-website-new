@@ -4,308 +4,283 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terms &amp; Conditions – Sudoku Carve</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      background: #fff;
-      color: #1E1E1E;
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      height: 100px;
-      display: flex;
-      align-items: center;
-      padding: 0 40px;
-      gap: 24px;
-      border-bottom: 1px solid #f0eef9;
-      background: linear-gradient(270deg, #F8E4CF 0%, #FFFFFF 49.82%, #DED7F4 99.99%);
-    }
-    .nav-logo img { width: 73px; height: auto; }
-    .nav-links {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 19px;
-      color: #1E1E1E;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-links a:hover { opacity: 0.6; }
-
-    /* PAGE HERO BAND */
-    .page-hero {
-      background: linear-gradient(270deg, #F8E4CF 0%, #FFFFFF 49.82%, #DED7F4 99.99%);
-      padding: 60px 40px;
-      text-align: center;
-      border-radius: 0 0 40px 40px;
-    }
-    .page-hero h1 {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 48px;
-      line-height: 56px;
-      color: #000;
-    }
-
-    /* CONTENT */
-    .content {
-      max-width: 800px;
-      margin: 64px auto;
-      padding: 0 40px;
-    }
-    .content section {
-      margin-bottom: 48px;
-    }
-    .content h2 {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 28px;
-      color: #000;
-      margin-bottom: 16px;
-    }
-    .content p {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 24px;
-      color: #383838;
-      margin-bottom: 12px;
-    }
-    .content ul {
-      list-style: none;
-      margin: 8px 0 12px 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .content ul li {
-      font-family: 'Inter', sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 24px;
-      color: #383838;
-      padding-left: 20px;
-      position: relative;
-    }
-    .content ul li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: linear-gradient(90deg, #7D28EB, #622DFD);
-    }
-    .content strong {
-      font-weight: 600;
-      color: #1E1E1E;
-    }
-    a.email-link {
-      color: #7D28EB;
-      text-decoration: none;
-    }
-    a.email-link:hover { text-decoration: underline; }
-
-    /* FOOTER */
-    footer {
-      padding: 24px 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      border-top: 1px solid #eee;
-    }
-    footer a {
-      font-family: 'Inter', sans-serif;
-      font-size: 12px;
-      color: #aaa;
-      text-decoration: none;
-    }
-    footer a:hover { color: #888; }
-
-    @media (max-width: 700px) {
-      nav { padding: 0 24px; }
-      .nav-links { gap: 20px; }
-      .nav-links a { font-size: 14px; }
-      .page-hero { padding: 48px 24px; }
-      .page-hero h1 { font-size: 36px; line-height: 44px; }
-      .content { padding: 0 24px; margin: 48px auto; }
-    }
-  </style>
+  <meta name="description" content="The Terms and Conditions of the Sudoku Carve app, operated by Shabake OÜ (Eduplica)." />
+  <meta property="og:title" content="Terms &amp; Conditions – Sudoku Carve" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eduplica.com/terms-conditions.html" />
+  <meta name="theme-color" content="#43288B" />
+  <link rel="icon" href="assets/app-icon.webp" type="image/webp" />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-latin-700-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-400-normal.woff2" crossorigin />
+  <link rel="stylesheet" href="assets/site.css" />
+  <link rel="stylesheet" href="assets/legal.css" />
 </head>
 <body>
 
-<nav>
-  <div class="nav-logo">
-    <a href="index.html"><img src="logo.png" alt="Eduplica logo" /></a>
+<!-- ───────────── NAV (sticky) — same as the home page, links go back to its sections ───────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="index.html" aria-label="Eduplica — home">
+      <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+      <span class="logo__word">eduplica</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="index.html#games">Games</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#milestones">Milestones</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__download" href="index.html#download">Download</a>
+      <button class="nav__menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
-  <ul class="nav-links">
-    <li><a href="index.html#features">Features</a></li>
-    <li><a href="index.html#roadmap">Roadmap</a></li>
-    <li><a href="index.html#about">About Us</a></li>
-    <li><a href="index.html#contact">Contact Us</a></li>
-  </ul>
-</nav>
+</header>
 
-<div class="page-hero">
-  <h1>Terms &amp; Conditions</h1>
+<!-- ───────────── MENU (phone + tablet) ───────────── -->
+<div class="menu" id="menu" hidden>
+  <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="menu__top">
+      <a class="logo" href="index.html" aria-label="Eduplica — home">
+        <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+        <span class="logo__word">eduplica</span>
+      </a>
+      <button class="menu__close" id="menuClose" type="button" aria-label="Close menu"><span></span><span></span></button>
+    </div>
+    <nav class="menu__links" aria-label="Main">
+      <a href="index.html#games">Games</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#milestones">Milestones</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary menu__download" href="index.html#download">Download</a>
+    <a class="menu__discord" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">
+      <img src="assets/discord.svg" alt="" width="24" height="24" /><span>Join our Discord</span>
+    </a>
+  </div>
 </div>
 
-<div class="content">
+<main id="top">
 
-  <section>
-    <h2>1. Introduction</h2>
-    <p>Welcome to Sudoku Carve (the “App”), operated by Shabake OÜ, an Estonian private limited company, trading under the brand name Eduplica (“we”, “our”, “us”).</p>
-    <p>By accessing or using the App, you agree to be bound by these Terms and Conditions (“Terms”). If you do not agree, please do not use the App.</p>
-    <p>These Terms govern your use of the App, including any services, features, content, and in-app purchases. Please read them carefully.</p>
-  </section>
+<!-- ───────────── LEGAL HEADER ───────────── -->
+<section class="lhead">
+  <div class="blob lhead__blob1" aria-hidden="true"></div>
+  <div class="blob lhead__blob2" aria-hidden="true"></div>
+  <div class="container">
+    <p class="lhead__eyebrow">LEGAL</p>
+    <h1 class="lhead__title">Terms &amp; Conditions</h1>
+    <p class="lhead__meta">Applies to the Sudoku Carve app · Operated by Shabake OÜ (Eduplica)</p>
+    <nav class="ltabs" aria-label="Legal pages">
+        <a class="ltab is-active" href="terms-conditions.html"><span class="ltab__long">Terms &amp; Conditions</span><span class="ltab__short">Terms</span></a>
+        <a class="ltab" href="privacy-policy.html"><span class="ltab__long">Privacy Policy</span><span class="ltab__short">Privacy</span></a>
+      </nav>
+  </div>
+</section>
 
-  <section>
-    <h2>2. Eligibility</h2>
-    <p>You must be at least 13 years old to use the App.</p>
-    <p>If you are under the age of 18, you confirm that you have obtained consent from a parent or legal guardian to use the App.</p>
-    <p>By using the App, you confirm that you meet these requirements.</p>
-  </section>
+<!-- ───────────── ON THIS PAGE + ARTICLE ───────────── -->
+<section class="lbody">
+  <div class="container">
+    <aside class="toc" id="toc">
+      <button class="toc__toggle" type="button" aria-expanded="false" aria-controls="tocList">On this page <svg width="14" height="8" viewBox="0 0 14 8" fill="none" aria-hidden="true"><path d="M1 1L7 7L13 1" stroke="#6E6B85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <p class="toc__label">ON THIS PAGE</p>
+      <nav class="toc__list" id="tocList" aria-label="On this page">
+          <a class="toc__link" href="#introduction">1. Introduction</a>
+          <a class="toc__link" href="#eligibility">2. Eligibility</a>
+          <a class="toc__link" href="#in-app-purchases">3. In-App Purchases</a>
+          <a class="toc__link" href="#ads">4. Ads and Third-Party Content</a>
+          <a class="toc__link" href="#gameplay">5. Gameplay, Scoring, and Rewards</a>
+          <a class="toc__link" href="#user-conduct">6. User Conduct</a>
+          <a class="toc__link" href="#accounts">7. User Accounts and Login</a>
+          <a class="toc__link" href="#feedback">8. Feedback and Contact</a>
+          <a class="toc__link" href="#data">9. Data Collection and Privacy</a>
+          <a class="toc__link" href="#intellectual-property">10. Intellectual Property</a>
+          <a class="toc__link" href="#disclaimers">11. Disclaimers</a>
+          <a class="toc__link" href="#liability">12. Limitation of Liability</a>
+          <a class="toc__link" href="#termination">13. Termination</a>
+          <a class="toc__link" href="#changes">14. Changes to These Terms</a>
+          <a class="toc__link" href="#governing-law">15. Governing Law</a>
+          <a class="toc__link" href="#contact">16. Contact Us</a>
+      </nav>
+    </aside>
 
-  <section>
-    <h2>3. In-App Purchases</h2>
-    <p>The App offers optional in-app purchases, including but not limited to:</p>
-    <ul>
-      <li>Remove forced Ads</li>
-      <li>Mosanite as the main game currency</li>
-      <li>SKIPS as skip ads tokens</li>
-      <li>Membership programs (e.g., ad-free experience and enhanced rewards)</li>
-    </ul>
-    <p>All purchases are final and non-refundable, except where required by applicable law. In-app purchases are processed by the Google Play Store or Apple App Store, and your rights related to purchases are subject to their respective terms and policies.</p>
-    <p>Nothing in these Terms limits any mandatory consumer rights you may have under applicable law, including EU consumer protection regulations.</p>
-  </section>
+    <article class="article">
+      <section class="lsec" id="introduction">
+        <h2>1. Introduction</h2>
+        <p>Welcome to Sudoku Carve (the “App”), operated by Shabake OÜ, an Estonian private limited company, trading under the brand name Eduplica (“we”, “our”, “us”).</p>
+        <p>By accessing or using the App, you agree to be bound by these Terms and Conditions (“Terms”). If you do not agree, please do not use the App.</p>
+        <p>These Terms govern your use of the App, including any services, features, content, and in-app purchases. Please read them carefully.</p>
+      </section>
 
-  <section>
-    <h2>4. Ads and Third-Party Content</h2>
-    <p>The App displays advertisements and content provided by third-party networks. We do not control and are not responsible for the content, accuracy, availability, or practices of such third parties.</p>
-    <p>Your interactions with third-party ads or services are governed by their respective terms and privacy policies.</p>
-  </section>
+      <section class="lsec" id="eligibility">
+        <h2>2. Eligibility</h2>
+        <p>You must be at least 13 years old to use the App.</p>
+        <p>If you are under the age of 18, you confirm that you have obtained consent from a parent or legal guardian to use the App.</p>
+        <p>By using the App, you confirm that you meet these requirements.</p>
+      </section>
 
-  <section>
-    <h2>5. Gameplay, Scoring, and Rewards</h2>
-    <p>Sudoku Carve includes gameplay systems such as scoring, rankings, and rewards. Rewards may include:</p>
-    <ul>
-      <li>In-game hints</li>
-      <li>Temporary premium access</li>
-      <li>Skips (Skip-ad tokens)</li>
-      <li>Mosanite (the universal fragments used as in-game currency)</li>
-      <li>Fragments (character-specific fragments)</li>
-    </ul>
-    <p>All rewards, currencies, and virtual items are virtual, have no real-world monetary value, and cannot be exchanged for real money, transferred outside the App, or redeemed for cash or goods.</p>
-    <p>We reserve the right to modify, balance, reset, or remove gameplay systems, rewards, or virtual items at any time.</p>
-  </section>
+      <section class="lsec" id="in-app-purchases">
+        <h2>3. In-App Purchases</h2>
+        <p>The App offers optional in-app purchases, including but not limited to:</p>
+        <ul>
+          <li>Remove forced Ads</li>
+          <li>Mosanite as the main game currency</li>
+          <li>SKIPS as skip ads tokens</li>
+          <li>Membership programs (e.g., ad-free experience and enhanced rewards)</li>
+        </ul>
+        <p>All purchases are final and non-refundable, except where required by applicable law. In-app purchases are processed by the Google Play Store or Apple App Store, and your rights related to purchases are subject to their respective terms and policies.</p>
+        <p>Nothing in these Terms limits any mandatory consumer rights you may have under applicable law, including EU consumer protection regulations.</p>
+      </section>
 
-  <section>
-    <h2>6. User Conduct</h2>
-    <p>By using the App, you agree to:</p>
-    <ul>
-      <li>Play fairly and not engage in cheating, hacking, automation, or use of unauthorized tools</li>
-      <li>Respect other users and avoid offensive, abusive, or harmful behavior, including in usernames or avatars</li>
-      <li>Not use the App for unlawful, fraudulent, or harmful activities</li>
-    </ul>
-    <p>We reserve the right to suspend or terminate accounts that violate these rules, with or without prior notice.</p>
-  </section>
+      <section class="lsec" id="ads">
+        <h2>4. Ads and Third-Party Content</h2>
+        <p>The App displays advertisements and content provided by third-party networks. We do not control and are not responsible for the content, accuracy, availability, or practices of such third parties.</p>
+        <p>Your interactions with third-party ads or services are governed by their respective terms and privacy policies.</p>
+      </section>
 
-  <section>
-    <h2>7. User Accounts and Login</h2>
-    <p>The App allows users to optionally link their account using third-party authentication services, such as Google Sign-In or Apple Sign-In / Game Center, in order to save and synchronize gameplay progress.</p>
-    <p>When you choose to link your account, we may receive limited information from the authentication provider, such as your user identifier, display name, profile image, and, where available, your email address. This information is used solely for account linking, progress synchronization, and personalized gameplay.</p>
-    <p>For more information on how your data is handled, please refer to our Privacy Policy.</p>
-  </section>
+      <section class="lsec" id="gameplay">
+        <h2>5. Gameplay, Scoring, and Rewards</h2>
+        <p>Sudoku Carve includes gameplay systems such as scoring, rankings, and rewards. Rewards may include:</p>
+        <ul>
+          <li>In-game hints</li>
+          <li>Temporary premium access</li>
+          <li>Skips (Skip-ad tokens)</li>
+          <li>Mosanite (the universal fragments used as in-game currency)</li>
+          <li>Fragments (character-specific fragments)</li>
+        </ul>
+        <p>All rewards, currencies, and virtual items are virtual, have no real-world monetary value, and cannot be exchanged for real money, transferred outside the App, or redeemed for cash or goods.</p>
+        <p>We reserve the right to modify, balance, reset, or remove gameplay systems, rewards, or virtual items at any time.</p>
+      </section>
 
-  <section>
-    <h2>8. Feedback and Contact</h2>
-    <p>You may submit feedback, suggestions, or reports through the App’s “Contact Us” feature, which may require providing an email address.</p>
-    <p>By submitting feedback, you grant us a non-exclusive, worldwide, royalty-free right to use, modify, and incorporate such feedback into the App without compensation or obligation.</p>
-  </section>
+      <section class="lsec" id="user-conduct">
+        <h2>6. User Conduct</h2>
+        <p>By using the App, you agree to:</p>
+        <ul>
+          <li>Play fairly and not engage in cheating, hacking, automation, or use of unauthorized tools</li>
+          <li>Respect other users and avoid offensive, abusive, or harmful behavior, including in usernames or avatars</li>
+          <li>Not use the App for unlawful, fraudulent, or harmful activities</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate accounts that violate these rules, with or without prior notice.</p>
+      </section>
 
-  <section>
-    <h2>9. Data Collection and Privacy</h2>
-    <p>We collect and process data as described in our Privacy Policy, including:</p>
-    <ul>
-      <li>Personal data (e.g., email address when contacting support)</li>
-      <li>Gameplay and interaction data (e.g., scores, actions, progress)</li>
-      <li>Analytics and performance data via third-party tools</li>
-    </ul>
-    <p>For GDPR purposes, the data controller is Shabake OÜ.</p>
-    <p>You may delete your account and associated data directly within the App by navigating to Menu → Account → Delete Account. For other data requests, contact us at <a href="mailto:support@eduplica.com" class="email-link">support@eduplica.com</a>.</p>
-  </section>
+      <section class="lsec" id="accounts">
+        <h2>7. User Accounts and Login</h2>
+        <p>The App allows users to optionally link their account using third-party authentication services, such as Google Sign-In or Apple Sign-In / Game Center, in order to save and synchronize gameplay progress.</p>
+        <p>When you choose to link your account, we may receive limited information from the authentication provider, such as your user identifier, display name, profile image, and, where available, your email address. This information is used solely for account linking, progress synchronization, and personalized gameplay.</p>
+        <p>For more information on how your data is handled, please refer to our Privacy Policy.</p>
+      </section>
 
-  <section>
-    <h2>10. Intellectual Property</h2>
-    <p>All content in the App, including but not limited to game design, artwork, graphics, audio, text, trademarks, and code, is owned by Shabake OÜ, its licensors, or partners, and is protected by intellectual property laws.</p>
-    <p>You may not copy, modify, distribute, sell, or create derivative works from any part of the App without prior written permission.</p>
-    <p><strong>License</strong></p>
-    <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes, in accordance with these Terms.</p>
-  </section>
+      <section class="lsec" id="feedback">
+        <h2>8. Feedback and Contact</h2>
+        <p>You may submit feedback, suggestions, or reports through the App’s “Contact Us” feature, which may require providing an email address.</p>
+        <p>By submitting feedback, you grant us a non-exclusive, worldwide, royalty-free right to use, modify, and incorporate such feedback into the App without compensation or obligation.</p>
+      </section>
 
-  <section>
-    <h2>11. Disclaimers</h2>
-    <p>The App is provided “as is” and “as available”, without warranties of any kind, whether express or implied.</p>
-    <p>We do not guarantee that the App will be uninterrupted, error-free, secure, or meet your expectations.</p>
-  </section>
+      <section class="lsec" id="data">
+        <h2>9. Data Collection and Privacy</h2>
+        <p>We collect and process data as described in our Privacy Policy, including:</p>
+        <ul>
+          <li>Personal data (e.g., email address when contacting support)</li>
+          <li>Gameplay and interaction data (e.g., scores, actions, progress)</li>
+          <li>Analytics and performance data via third-party tools</li>
+        </ul>
+        <p>For GDPR purposes, the data controller is Shabake OÜ.</p>
+        <p>You may delete your account and associated data directly within the App by navigating to Menu → Account → Delete Account. For other data requests, contact us at <a href="mailto:support@eduplica.com">support@eduplica.com</a>.</p>
+      </section>
 
-  <section>
-    <h2>12. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages, including loss of data, loss of profits, or loss of use, arising out of or related to your use of the App.</p>
-  </section>
+      <section class="lsec" id="intellectual-property">
+        <h2>10. Intellectual Property</h2>
+        <p>All content in the App, including but not limited to game design, artwork, graphics, audio, text, trademarks, and code, is owned by Shabake OÜ, its licensors, or partners, and is protected by intellectual property laws.</p>
+        <p>You may not copy, modify, distribute, sell, or create derivative works from any part of the App without prior written permission.</p>
+        <h3>License</h3>
+        <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes, in accordance with these Terms.</p>
+      </section>
 
-  <section>
-    <h2>13. Termination</h2>
-    <p>We may suspend or terminate your access to the App at any time, with or without notice, if you violate these Terms or for any reason at our sole discretion.</p>
-    <p>Upon termination, your license to use the App will immediately cease.</p>
-  </section>
+      <section class="lsec" id="disclaimers">
+        <h2>11. Disclaimers</h2>
+        <p>The App is provided “as is” and “as available”, without warranties of any kind, whether express or implied.</p>
+        <p>We do not guarantee that the App will be uninterrupted, error-free, secure, or meet your expectations.</p>
+      </section>
 
-  <section>
-    <h2>14. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. Significant changes will be communicated via the App or other appropriate channels.</p>
-    <p>Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
-  </section>
+      <section class="lsec" id="liability">
+        <h2>12. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages, including loss of data, loss of profits, or loss of use, arising out of or related to your use of the App.</p>
+      </section>
 
-  <section>
-    <h2>15. Governing Law</h2>
-    <p>These Terms are governed by the laws of Estonia, without regard to conflict-of-law principles.</p>
-    <p>Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Estonia.</p>
-  </section>
+      <section class="lsec" id="termination">
+        <h2>13. Termination</h2>
+        <p>We may suspend or terminate your access to the App at any time, with or without notice, if you violate these Terms or for any reason at our sole discretion.</p>
+        <p>Upon termination, your license to use the App will immediately cease.</p>
+      </section>
 
-  <section>
-    <h2>16. Contact Us</h2>
-    <p>If you have any questions or concerns regarding these Terms, please contact us at: <a href="mailto:support@eduplica.com" class="email-link">support@eduplica.com</a></p>
-  </section>
+      <section class="lsec" id="changes">
+        <h2>14. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. Significant changes will be communicated via the App or other appropriate channels.</p>
+        <p>Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+      </section>
 
-</div>
+      <section class="lsec" id="governing-law">
+        <h2>15. Governing Law</h2>
+        <p>These Terms are governed by the laws of Estonia, without regard to conflict-of-law principles.</p>
+        <p>Any disputes arising from these Terms shall be subject to the exclusive jurisdiction of the courts of Estonia.</p>
+      </section>
 
-<footer>
-  <a href="privacy-policy.html">Privacy Policy</a>
-  <a href="terms-conditions.html">Terms &amp; Conditions</a>
+      <section class="lsec" id="contact">
+        <h2>16. Contact Us</h2>
+        <p>If you have any questions or concerns regarding these Terms, please contact us at: <a href="mailto:support@eduplica.com">support@eduplica.com</a></p>
+      </section>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────── FOOTER — same as the home page ───────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="Eduplica — home">
+          <img class="logo__mark" src="assets/logo-mark.svg" alt="" width="27" height="20" />
+          <span class="logo__word">eduplica</span>
+        </a>
+        <p class="footer__tagline">Friendly brain games by Eduplica.</p>
+        <a class="footer__social" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener" aria-label="Eduplica on Discord"><img src="assets/discord.svg" alt="" width="24" height="24" /></a>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Games</h4>
+          <a href="index.html#games">Sudoku Carve</a>
+          <span class="footer__muted">More coming soon</span>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="index.html#about">About us</a>
+          <a href="index.html#milestones">Milestones</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <a href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">Discord</a>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="delete-data.html">Delete my data</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Eduplica. All rights reserved.</p>
+      <p class="footer__trademark">Apple and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </div>
 </footer>
 
+<script src="assets/legal.js" defer></script>
 </body>
 </html>
