@@ -96,7 +96,8 @@
     { v: 'v1.0.7',   date: 'Aug 2026', title: 'Learn as you play', bullets: ['Brand-new guided tutorial', 'New puzzle generator', 'Delete account in the app'] },
     { v: 'v1.0.8',   date: 'Aug 2026', title: 'Jump right in', bullets: ['Skip the tutorial anytime', 'Puzzle generator V3', 'Ads and offline saving fixes', 'Small fixes and polish'] },
     { v: 'v1.0.9',   date: 'Oct 2026', title: 'The big redesign', bullets: ['New home with Daily Rewards', 'Link Account to keep your progress', 'Share a puzzle as a card', 'New character art, made for tablets'] },
-    { v: 'v1.0.91',  date: 'Oct 2026', title: 'Polish and fixes', bullets: ['Bug fixes and stability', 'Small polish across the game'] }
+    { v: 'v1.0.91',  date: 'Oct 2026', title: 'Polish and fixes', bullets: ['Bug fixes and stability', 'Small polish across the game'] },
+    { v: 'v1.0.92',  date: 'Oct 2026', title: 'You have mail', bullets: ['New Mailbox on the home screen', 'Clearer How to Play', 'Smoother loading and screen slides', 'Better fit on bigger screens'] }
   ];
 
   const track = document.getElementById('cardTrack');
