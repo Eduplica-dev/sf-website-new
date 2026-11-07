@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Game Data – Sudoku Carve</title>
+  <meta name="description" content="Sudoku Carve pitch deck for publishers and investors: sudoku with characters instead of numbers, live on iOS and Android." />
+  <meta property="og:title" content="Sudoku Carve – Pitch Deck" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eduplica.com/pitch/" />
+  <meta property="og:image" content="https://eduplica.com/pitch/slide-01.webp" />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#43288B" />
+  <link rel="icon" href="../assets/app-icon.webp" type="image/webp" />
+  <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/poppins-latin-700-normal.woff2" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/inter-latin-400-normal.woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/site.css" />
+  <link rel="stylesheet" href="../assets/legal.css" />
+  <style>
+    .pbody { padding: 40px 0 64px; background: var(--lavender); }
+    .pactions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .pslides { display: grid; gap: 20px; margin-top: 32px; }
+    .pslide { display: block; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 12px 40px rgba(67,40,139,.1); }
+    .pslide img { display: block; width: 100%; height: auto; }
+    .pcontact { margin-top: 40px; background: #fff; border-radius: 16px; padding: 24px; box-shadow: 0 12px 40px rgba(67,40,139,.1); }
+    .pcontact h2 { font-size: 20px; line-height: 28px; color: var(--ink); }
+    .pcontact p { margin-top: 8px; font-size: 15px; line-height: 24px; color: var(--grey); }
+    .pcontact a { color: var(--purple); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
+    .pstores { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .pstores img { height: 48px; width: auto; }
+  </style>
+</head>
+<body>
+
+<!-- ───────────── NAV (sticky) — same as the home page, links go back to its sections ───────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="logo" href="../index.html" aria-label="Eduplica — home">
+      <img class="logo__mark" src="../assets/logo-mark.svg" alt="" width="27" height="20" />
+      <span class="logo__word">eduplica</span>
+    </a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="../index.html#games">Games</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#milestones">Milestones</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary nav__download" href="../index.html#download">Download</a>
+      <button class="nav__menu" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ───────────── MENU (phone + tablet) ───────────── -->
+<div class="menu" id="menu" hidden>
+  <div class="menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="menu__top">
+      <a class="logo" href="../index.html" aria-label="Eduplica — home">
+        <img class="logo__mark" src="../assets/logo-mark.svg" alt="" width="27" height="20" />
+        <span class="logo__word">eduplica</span>
+      </a>
+      <button class="menu__close" id="menuClose" type="button" aria-label="Close menu"><span></span><span></span></button>
+    </div>
+    <nav class="menu__links" aria-label="Main">
+      <a href="../index.html#games">Games</a>
+      <a href="../index.html#community">Community</a>
+      <a href="../index.html#milestones">Milestones</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary menu__download" href="../index.html#download">Download</a>
+    <a class="menu__discord" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">
+      <img src="../assets/discord.svg" alt="" width="24" height="24" /><span>Join our Discord</span>
+    </a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ───────────── HEADER ───────────── -->
+<section class="lhead lhead--plain">
+  <div class="blob lhead__blob1" aria-hidden="true"></div>
+  <div class="blob lhead__blob2" aria-hidden="true"></div>
+  <div class="container">
+    <p class="lhead__eyebrow">FOR PUBLISHERS AND INVESTORS</p>
+    <h1 class="lhead__title">Sudoku Carve – Pitch Deck</h1>
+    <p class="lhead__meta">Sudoku with characters instead of numbers. Live on iOS and Android. November 2026.</p>
+    <div class="pactions">
+      <a class="btn btn--primary" href="Sudoku-Carve-Pitch-Deck.pdf" download>Download PDF</a>
+      <a class="btn btn--white" href="https://youtube.com/shorts/cNh_EDbZhaQ" target="_blank" rel="noopener">Watch the 30s trailer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── SLIDES ───────────── -->
+<section class="pbody">
+  <div class="container">
+    <div class="pslides">
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=1" target="_blank" rel="noopener"><img src="slide-01.webp" alt="Slide 1" width="1600" height="900" loading="eager" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=2" target="_blank" rel="noopener"><img src="slide-02.webp" alt="Slide 2" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=3" target="_blank" rel="noopener"><img src="slide-03.webp" alt="Slide 3" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=4" target="_blank" rel="noopener"><img src="slide-04.webp" alt="Slide 4" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=5" target="_blank" rel="noopener"><img src="slide-05.webp" alt="Slide 5" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=6" target="_blank" rel="noopener"><img src="slide-06.webp" alt="Slide 6" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=7" target="_blank" rel="noopener"><img src="slide-07.webp" alt="Slide 7" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=8" target="_blank" rel="noopener"><img src="slide-08.webp" alt="Slide 8" width="1600" height="900" loading="lazy" /></a>
+      <a class="pslide" href="Sudoku-Carve-Pitch-Deck.pdf#page=9" target="_blank" rel="noopener"><img src="slide-09.webp" alt="Slide 9" width="1600" height="900" loading="lazy" /></a>
+    </div>
+
+    <div class="pcontact">
+      <h2>Get in touch</h2>
+      <p>Publishing and investment enquiries: <a href="mailto:hello@eduplica.com">hello@eduplica.com</a></p>
+      <div class="pstores">
+        <a href="https://apps.apple.com/app/id6761488124" target="_blank" rel="noopener"><img src="../assets/badge-appstore.webp" alt="Download on the App Store" /></a>
+        <a href="https://play.google.com/store/apps/details?id=com.Eduplica.SudokuForge" target="_blank" rel="noopener"><img src="../assets/badge-googleplay.webp" alt="Get it on Google Play" /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────── FOOTER — same as the home page ───────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="../index.html" aria-label="Eduplica — home">
+          <img class="logo__mark" src="../assets/logo-mark.svg" alt="" width="27" height="20" />
+          <span class="logo__word">eduplica</span>
+        </a>
+        <p class="footer__tagline">Friendly brain games by Eduplica.</p>
+        <a class="footer__social" href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener" aria-label="Eduplica on Discord"><img src="../assets/discord.svg" alt="" width="24" height="24" /></a>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Games</h4>
+          <a href="../index.html#games">Sudoku Carve</a>
+          <span class="footer__muted">More coming soon</span>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="../index.html#about">About us</a>
+          <a href="../index.html#milestones">Milestones</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Community</h4>
+          <a href="https://discord.gg/FN9WDfrU8T" target="_blank" rel="noopener">Discord</a>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="../terms-conditions.html">Terms &amp; Conditions</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../delete-data.html">Delete my data</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2026 Eduplica. All rights reserved.</p>
+      <p class="footer__trademark">Apple and App Store are trademarks of Apple Inc. Google Play is a trademark of Google LLC.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/legal.js" defer></script>
+</body>
+</html>
