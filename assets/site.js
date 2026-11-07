@@ -265,10 +265,23 @@
       subject.classList.remove('is-placeholder');
     }
     hint.hidden = topic !== 'Work with us';
+    const invest = document.getElementById('investBlock');
+    if (invest) invest.hidden = topic !== 'Invest with us';
   }
   topics.forEach((t) => t.querySelector('input').addEventListener('change', () => setTopic(t)));
   subject.addEventListener('change', () => subject.classList.toggle('is-placeholder', !subject.value));
   setTopic(form.querySelector('.topic.is-active'));
+
+  /* eduplica.com/#invest (and /invest) opens Contact with "Invest with us" selected */
+  function openInvest() {
+    if (location.hash !== '#invest') return;
+    const t = form.querySelector('.topic input[value="Invest with us"]');
+    if (!t) return;
+    t.checked = true; setTopic(t.closest('.topic'));
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  openInvest();
+  window.addEventListener('hashchange', openInvest);
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
