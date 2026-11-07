@@ -364,6 +364,13 @@ h1, h2, h3, h4 { font-family: var(--font-title); font-weight: 600; }
 .contact__discord { display: block; margin-top: 8px; font-weight: 500; font-size: 15px; line-height: 24px; color: #C7BFEE; white-space: nowrap; }
 @media (max-width: 379px) { .contact__discord { font-size: 14px; } }
 .contact__discord:hover { color: #fff; }
+.invest { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.18); }
+.invest__lead { font-weight: 600; font-size: 12px; line-height: 16px; letter-spacing: .12em; text-transform: uppercase; color: #C7BFEE; }
+.invest__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; }
+.invest__text { font-size: 15px; line-height: 24px; color: rgba(255,255,255,.9); }
+.invest__btn { flex: none; height: 44px; padding: 0 18px; font-size: 14px; }
+.invest__btn--yt { display: inline-flex; align-items: center; gap: 8px; }
+@media (max-width: 419px) { .invest__row { flex-direction: column; align-items: flex-start; } }
 
 .form { position: relative; margin-top: 28px; background: #fff; border-radius: 16px; padding: 20px; color: var(--ink); }
 .form__label { display: block; font-weight: 600; font-size: 14px; line-height: 20px; color: var(--ink); }
